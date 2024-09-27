@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../CKKS-Keyswitching.srcs/sim_1/new" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/DIV2.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/Mod_Add.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/Mod_Mul.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/Mod_Sub.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/UBU.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/counter.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/delay.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/karatsuba48.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/karatsuba51.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/modred.v" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/multiply.v" \
+
+sv xil_defaultlib  --include "../../../../CKKS-Keyswitching.srcs/sim_1/new" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/BUA.sv" \
+"../../../../CKKS-Keyswitching.srcs/sources_1/new/INTT.sv" \
+"../../../../CKKS-Keyswitching.srcs/sim_1/new/INTT_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
