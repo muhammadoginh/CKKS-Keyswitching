@@ -42,7 +42,6 @@ module INTT
     wire [BW - 1:0] stage_out [RDIM - 1:0];   // Intermediate output signal for current stage
     reg [BW - 1:0] A0_reg [3:0];              // Register for A0 inputs to BUA
     reg [BW - 1:0] A1_reg [3:0];              // Register for A1 inputs to BUA
-    reg [BW - 1:0] B_reg [7:0];               // Register for B outputs to BUA
     reg [BW - 1:0] inv_psi_reg [3:0];             // Register for psi inputs to BUA
     reg           ld, dec;                    // Control signals for counter
     
@@ -79,9 +78,9 @@ module INTT
             IDLE: begin                
                 if (start) begin
                     ld = 1;
-                    counter_input = 5'd24;
-                    A0_reg = COEF[3:0];        // First 4 coefficients
-                    A1_reg = COEF[7:4];        // Next 4 coefficients
+                    counter_input = 5'd25;
+                    A0_reg = {EVAL[6], EVAL[4], EVAL[2], EVAL[0]};        // First 4 evaluation
+                    A1_reg = {EVAL[7], EVAL[5], EVAL[3], EVAL[1]};        // Next 4 evaluation
                     inv_psi_reg = inv_psi_stage1;      // psi values for stage 1
                     next_state =  STAGE1;
                 end else
@@ -91,9 +90,9 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd24;
-                    A0_reg = {stage_out[5:4], stage_out[1:0]};      // First 4 coefficients
-                    A1_reg = {stage_out[7:6], stage_out[3:2]};      // Next 4 coefficients
+                    counter_input = 5'd25;
+                    A0_reg = {stage_out[6], stage_out[2], stage_out[4], stage_out[0]};      // First 4 coefficients
+                    A1_reg = {stage_out[7], stage_out[3], stage_out[5], stage_out[1]};      // Next 4 coefficients
                     inv_psi_reg = inv_psi_stage2;                           // psi values for stage 2
                     next_state = STAGE2;
                 end else
@@ -103,9 +102,9 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd24;
-                    A0_reg = {stage_out[6], stage_out[2], stage_out[4], stage_out[0]};      // First 4 coefficients
-                    A1_reg = {stage_out[7], stage_out[3], stage_out[5], stage_out[1]};      // Next 4 coefficients
+                    counter_input = 5'd25;
+                    A0_reg = {stage_out[5:4], stage_out[1:0]};      // First 4 coefficients
+                    A1_reg = {stage_out[7:6], stage_out[3:2]};      // Next 4 coefficients
                     inv_psi_reg = inv_psi_stage3;                                                   // psi values for stage 3
                     next_state = STAGE3;
                 end else
@@ -115,7 +114,7 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd24;
+                    counter_input = 5'd25;
                     next_state = DONE;
                 end else
                     next_state = STAGE3;
@@ -123,7 +122,6 @@ module INTT
             DONE: begin
                 done = 1;
                 ld = 0;
-                B_reg = {stage_out[7], stage_out[3], stage_out[6], stage_out[2], stage_out[5], stage_out[1], stage_out[4], stage_out[0]};
                 next_state = IDLE;
                 
             end
@@ -157,5 +155,5 @@ module INTT
     end
 
     // Assign final output to stage_out (which will hold the result of the last stage)
-    assign COEF = (done == 1) ? B_reg : {48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0};
+    assign COEF = (done == 1) ? stage_out : {48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0, 48'b0};
 endmodule

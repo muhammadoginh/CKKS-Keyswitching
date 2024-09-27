@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Sep 26 07:15:03 2024
-# Process ID: 2616
+# Start of session at: Fri Sep 27 17:44:01 2024
+# Process ID: 41292
 # Current directory: C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.runs/synth_1
-# Command line: vivado.exe -log Mod_Mul.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mod_Mul.tcl
-# Log file: C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.runs/synth_1/Mod_Mul.vds
+# Command line: vivado.exe -log INTT.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source INTT.tcl
+# Log file: C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.runs/synth_1/INTT.vds
 # Journal file: C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.runs/synth_1\vivado.jou
 # Running On: DESKTOP-U41830S, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 8, Host memory: 68301 MB
 #-----------------------------------------------------------
-source Mod_Mul.tcl -notrace
+source INTT.tcl -notrace
