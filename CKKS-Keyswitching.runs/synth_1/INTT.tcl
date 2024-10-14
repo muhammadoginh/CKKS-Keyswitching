@@ -70,6 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param power.BramSDPPropagationFix 1
+set_param chipscope.maxJobs 4
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param power.enableLutRouteBelPower 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xcu250-figd2104-2L-e
 
@@ -126,7 +131,7 @@ read_checkpoint -auto_incremental -incremental C:/Users/User/Documents/Projects/
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top INTT -part xcu250-figd2104-2L-e
+synth_design -top INTT -part xcu250-figd2104-2L-e -mode out_of_context
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

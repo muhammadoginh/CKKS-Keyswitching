@@ -64,13 +64,13 @@ module UBU
 
     always @(*) begin
         case (mode)
-            0: begin  // NTT (Latency: 21)
+            0: begin  // NTT (Latency: 16)
                 mux_sel[0] = 0; 
                 mux_sel[1] = 1;
                 mux_sel[2] = 0; 
                 mux_sel[3] = 1; 
             end
-            1: begin // INTT (Latency: 24)
+            1: begin // INTT (Latency: 20)
                 mux_sel[0] = 1;
                 mux_sel[1] = 0; 
                 mux_sel[2] = 1;
@@ -80,7 +80,7 @@ module UBU
     end
 
     // delay for NTT and INTT
-    delay #(.BW(48), .N(20)) mux_out_0_d20(.clk(clk), .rstn(rstn), .in(mux_out[0]), .out(mux_out_0));
+    delay #(.BW(48), .N(15)) mux_out_0_d20(.clk(clk), .rstn(rstn), .in(mux_out[0]), .out(mux_out_0));
     
     assign mux_out[0] = (mode == 0) ? r_A0 : sum_mod;
     assign mux_out[1] = (mode == 0) ? r_A1 : sub_mod;
@@ -97,7 +97,7 @@ module UBU
         .M(sub_mod)
     );
     
-    // Modular Subtraction
+    // Modular Adder
     Mod_Add #(BW) ModAdd(   // Latency: 1
         .clk(clk),
         .rstn(rstn),
@@ -108,7 +108,7 @@ module UBU
     );
     
     // Modular Multiplication
-    Mod_Mul #(BW) ModMul(  // Latency: 18
+    Mod_Mul #(BW) ModMul(  // Latency: 13
         .clk(clk),
         .rstn(rstn),
         .A(mux_out[1]),

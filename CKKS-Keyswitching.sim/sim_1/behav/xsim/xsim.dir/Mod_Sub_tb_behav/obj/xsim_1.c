@@ -57,6 +57,7 @@ extern int main(int, char**);
 IKI_DLLESPEC extern void execute_5(char*, char *);
 IKI_DLLESPEC extern void execute_7(char*, char *);
 IKI_DLLESPEC extern void execute_8(char*, char *);
+IKI_DLLESPEC extern void execute_15(char*, char *);
 IKI_DLLESPEC extern void execute_16(char*, char *);
 IKI_DLLESPEC extern void execute_17(char*, char *);
 IKI_DLLESPEC extern void execute_18(char*, char *);
@@ -68,7 +69,6 @@ IKI_DLLESPEC extern void execute_23(char*, char *);
 IKI_DLLESPEC extern void execute_3(char*, char *);
 IKI_DLLESPEC extern void execute_4(char*, char *);
 IKI_DLLESPEC extern void execute_14(char*, char *);
-IKI_DLLESPEC extern void vlog_simple_process_execute_1_fast_no_reg_no_agg(char*, char*, char*);
 IKI_DLLESPEC extern void execute_10(char*, char *);
 IKI_DLLESPEC extern void execute_11(char*, char *);
 IKI_DLLESPEC extern void execute_12(char*, char *);
@@ -80,7 +80,7 @@ IKI_DLLESPEC extern void execute_27(char*, char *);
 IKI_DLLESPEC extern void execute_28(char*, char *);
 IKI_DLLESPEC extern void execute_29(char*, char *);
 IKI_DLLESPEC extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[26] = {(funcp)execute_5, (funcp)execute_7, (funcp)execute_8, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)execute_22, (funcp)execute_23, (funcp)execute_3, (funcp)execute_4, (funcp)execute_14, (funcp)vlog_simple_process_execute_1_fast_no_reg_no_agg, (funcp)execute_10, (funcp)execute_11, (funcp)execute_12, (funcp)execute_13, (funcp)execute_24, (funcp)execute_25, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)execute_29, (funcp)vlog_transfunc_eventcallback};
+funcp funcTab[26] = {(funcp)execute_5, (funcp)execute_7, (funcp)execute_8, (funcp)execute_15, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)execute_22, (funcp)execute_23, (funcp)execute_3, (funcp)execute_4, (funcp)execute_14, (funcp)execute_10, (funcp)execute_11, (funcp)execute_12, (funcp)execute_13, (funcp)execute_24, (funcp)execute_25, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)execute_29, (funcp)vlog_transfunc_eventcallback};
 const int NumRelocateId= 26;
 
 void relocate(char *dp)

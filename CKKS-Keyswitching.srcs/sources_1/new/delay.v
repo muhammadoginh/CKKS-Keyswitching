@@ -29,24 +29,26 @@ module delay
         output [BW-1:0] out
     );
     
-    genvar i;
+    integer i;
     reg [BW-1:0] buffer [N-1:0];
-    
-    generate 
-        for(i=0; i<N; i=i+1) begin
-            always @(posedge clk) begin
-                if(~rstn) begin
-                    buffer[i] <= 0; 
-                end else begin
-                    if(i == 0) begin
-                        buffer[i] <= in;
-                    end else begin
-                        buffer[i] <= buffer[i-1];
-                    end
-                end
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            // Reset all register delay t0 0
+            for (i = 0; i < N; i = i + 1) begin
+                buffer[i] <= {BW{1'b0}};
             end
+
+        end else begin
+            // Shift input value into array
+            buffer[0] <= in;  // Storing current input
+            for (i = 1; i < N; i = i + 1) begin
+                buffer[i] <= buffer[i-1];  // Storing value from previous register
+            end
+
         end
-    endgenerate
+    end
     
     assign out = buffer[N-1]; 
+    
 endmodule

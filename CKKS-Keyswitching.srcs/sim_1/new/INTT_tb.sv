@@ -48,10 +48,10 @@ module INTT_tb();
     
     // Read input data from file
     initial begin
-        $readmemh("C:\\Users\\User\\Downloads\\KS_Research\\data\\EVAL_form.mem", EVAL);
-        $readmemh("C:\\Users\\User\\Downloads\\KS_Research\\data\\rns_modulus.mem", q_table);
-        $readmemh("C:\\Users\\User\\Downloads\\KS_Research\\data\\rns_mu.mem", mu_table);
-        $readmemh("C:\\Users\\User\\Downloads\\KS_Research\\data\\rns_inv_psi.mem", y_table);
+        $readmemh("D:\\KS_Research\\data\\EVAL_form.mem", EVAL);
+        $readmemh("D:\\KS_Research\\data\\rns_modulus.mem", q_table);
+        $readmemh("D:\\KS_Research\\data\\rns_mu.mem", mu_table);
+        $readmemh("D:\\KS_Research\\data\\rns_inv_psi.mem", y_table);
     end
     
     // Instantiate the karatsuba_uint_mult module

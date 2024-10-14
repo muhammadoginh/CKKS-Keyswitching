@@ -1,7 +1,7 @@
-Running: xsim.dir/karatsuba51_tb_behav/xsimk.exe -simmode gui -wdb karatsuba51_tb_behav.wdb -simrunnum 0 -socket 54903
+Running: xsim.dir/karatsuba51_tb_behav/xsimk.exe -simmode gui -wdb karatsuba51_tb_behav.wdb -simrunnum 0 -socket 62533
 Design successfully loaded
-Design Loading Memory Usage: 7928 KB (Peak: 7928 KB)
+Design Loading Memory Usage: 7968 KB (Peak: 7968 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 8568 KB (Peak: 8568 KB)
+Simulation Memory Usage: 8608 KB (Peak: 8608 KB)
 Simulation CPU Usage: 0 ms

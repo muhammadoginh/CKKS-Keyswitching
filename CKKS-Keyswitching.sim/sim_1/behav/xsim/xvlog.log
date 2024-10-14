@@ -1,3 +1,25 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/DIV2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DIV2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/Mod_Add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mod_Add
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/Mod_Mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mod_Mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/Mod_Sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mod_Sub
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/UBU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module UBU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/delay.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module delay
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/karatsuba48.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module karatsuba48
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/karatsuba51.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module karatsuba51
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/modred.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module modred
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/multiply.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiply
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/BUA.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BUA
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/User/Documents/Projects/CKKS-Keyswitching/CKKS-Keyswitching.srcs/sources_1/new/INTT.sv" into library xil_defaultlib

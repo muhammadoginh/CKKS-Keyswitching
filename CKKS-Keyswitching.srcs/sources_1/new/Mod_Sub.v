@@ -23,23 +23,22 @@
 module Mod_Sub
     #(parameter BW = 48)     // Bit-width
     (
-        input clk,
-        input rstn,
-        input [BW - 1:0] A,
-        input [BW - 1:0] B,
-        input [BW - 1:0] q,
-        output [BW - 1:0] M
+        input                 clk,
+        input                 rstn,
+        input      [BW - 1:0] A,
+        input      [BW - 1:0] B,
+        input      [BW - 1:0] q,
+        output reg [BW - 1:0] M
     );
     
     wire [BW:0] Sub;
-    reg [BW - 1:0] Sub_Mod;
     
     // input reg
     reg [BW - 1:0] A_reg;
     reg [BW - 1:0] B_reg;
     
-    always @(posedge clk) begin
-        if (!rstn) begin
+    always @(posedge clk or negedge rstn) begin
+        if (~rstn) begin
             A_reg <= 0;
             B_reg <= 0;
         end else begin
@@ -52,15 +51,14 @@ module Mod_Sub
     assign Sub = A_reg - B_reg + q;        
     
     // Register to store the final result
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rstn) begin
         if (~rstn)
-            Sub_Mod <= 0;
+            M <= 0;
         else
             if (Sub > q)
-                Sub_Mod <= Sub - q;
+                M <= Sub - q;
             else
-                Sub_Mod <= Sub[BW - 1:0];
+                M <= Sub[BW - 1:0];
     end
     
-    assign M = Sub_Mod;
 endmodule

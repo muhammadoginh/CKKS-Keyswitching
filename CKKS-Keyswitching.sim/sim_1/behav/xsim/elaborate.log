@@ -9,14 +9,17 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.counter(BW=5)
-Compiling module xil_defaultlib.delay(N=20)
+Compiling module xil_defaultlib.delay(N=15)
 Compiling module xil_defaultlib.Mod_Sub
 Compiling module xil_defaultlib.Mod_Add
+Compiling module xil_defaultlib.delay(N=4)
+Compiling module xil_defaultlib.delay(N=4,BW=50)
 Compiling module xil_defaultlib.multiply(A_WIDTH=17,OUT_WIDTH=34...
-Compiling module xil_defaultlib.karatsuba48
+Compiling module xil_defaultlib.multiply(A_WIDTH=16,B_WIDTH=16,O...
+Compiling module xil_defaultlib.karatsuba48_default
+Compiling module xil_defaultlib.delay(N=8,BW=96)
 Compiling module xil_defaultlib.multiply(A_WIDTH=18,B_WIDTH=18,O...
-Compiling module xil_defaultlib.karatsuba51
-Compiling module xil_defaultlib.delay(N=12,BW=96)
+Compiling module xil_defaultlib.karatsuba51_default
 Compiling module xil_defaultlib.modred
 Compiling module xil_defaultlib.Mod_Mul
 Compiling module xil_defaultlib.DIV2

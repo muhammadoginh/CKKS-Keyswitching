@@ -56,6 +56,9 @@ module Mod_Add_tb();
     initial
     begin
         clk = 1;
+        rstn = 0;
+        
+        #4;
         rstn = 1;
         for (integer i = 0; i < n_tests; i = i+1) begin
             // Generate stimuli from random inputs

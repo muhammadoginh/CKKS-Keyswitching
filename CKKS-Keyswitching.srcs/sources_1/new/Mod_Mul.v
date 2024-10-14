@@ -31,8 +31,15 @@ module Mod_Mul
         input [BW + 1:0] mu,
         output [BW - 1:0] M
     );
+    
+    // Wire for barrett input 
+    wire [BW - 1:0] q_in;
+    wire [BW + 1:0] mu_in;
 
     wire [2*BW - 1:0] X;
+    
+    delay #(4, BW) shift1(clk, rstn, q, q_in);      // after integrate only need 4
+    delay #(4, BW+2) shift2(clk, rstn, mu, mu_in);  // after integrate only need 4
     
     // integer multiplication
     karatsuba48 multiply(clk, rstn, A, B, X);
@@ -42,8 +49,8 @@ module Mod_Mul
         .clk(clk),
         .rstn(rstn),
         .X(X),
-        .q(q),
-        .mu(mu),
+        .q(q_in),
+        .mu(mu_in),
         .M(M)
     );
 endmodule

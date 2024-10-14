@@ -78,7 +78,7 @@ module INTT
             IDLE: begin                
                 if (start) begin
                     ld = 1;
-                    counter_input = 5'd25;
+                    counter_input = 5'd20;
                     A0_reg = {EVAL[6], EVAL[4], EVAL[2], EVAL[0]};        // First 4 evaluation
                     A1_reg = {EVAL[7], EVAL[5], EVAL[3], EVAL[1]};        // Next 4 evaluation
                     inv_psi_reg = inv_psi_stage1;      // psi values for stage 1
@@ -90,7 +90,7 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd25;
+                    counter_input = 5'd20;
                     A0_reg = {stage_out[6], stage_out[2], stage_out[4], stage_out[0]};      // First 4 coefficients
                     A1_reg = {stage_out[7], stage_out[3], stage_out[5], stage_out[1]};      // Next 4 coefficients
                     inv_psi_reg = inv_psi_stage2;                           // psi values for stage 2
@@ -102,7 +102,7 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd25;
+                    counter_input = 5'd20;
                     A0_reg = {stage_out[5:4], stage_out[1:0]};      // First 4 coefficients
                     A1_reg = {stage_out[7:6], stage_out[3:2]};      // Next 4 coefficients
                     inv_psi_reg = inv_psi_stage3;                                                   // psi values for stage 3
@@ -114,7 +114,7 @@ module INTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd25;
+                    counter_input = 5'd20;
                     next_state = DONE;
                 end else
                     next_state = STAGE3;

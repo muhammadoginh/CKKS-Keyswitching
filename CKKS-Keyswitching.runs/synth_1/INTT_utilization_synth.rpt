@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Sep 27 17:45:38 2024
+| Date         : Tue Oct 15 02:57:16 2024
 | Host         : DESKTOP-U41830S running 64-bit major release  (build 9200)
 | Command      : report_utilization -file INTT_utilization_synth.rpt -pb INTT_utilization_synth.pb
 | Design       : INTT
@@ -36,13 +36,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*                  | 7894 |     0 |          0 |   1728000 |  0.46 |
-|   LUT as Logic             | 7502 |     0 |          0 |   1728000 |  0.43 |
-|   LUT as Memory            |  392 |     0 |          0 |    791040 |  0.05 |
+| CLB LUTs*                  | 8113 |     0 |          0 |   1728000 |  0.47 |
+|   LUT as Logic             | 7575 |     0 |          0 |   1728000 |  0.44 |
+|   LUT as Memory            |  538 |     0 |          0 |    791040 |  0.07 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
-|     LUT as Shift Register  |  392 |     0 |            |           |       |
-| CLB Registers              | 8695 |     0 |          0 |   3456000 |  0.25 |
-|   Register as Flip Flop    | 8116 |     0 |          0 |   3456000 |  0.23 |
+|     LUT as Shift Register  |  538 |     0 |            |           |       |
+| CLB Registers              | 7965 |     0 |          0 |   3456000 |  0.23 |
+|   Register as Flip Flop    | 7386 |     0 |          0 |   3456000 |  0.21 |
 |   Register as Latch        |  579 |     0 |          0 |   3456000 |  0.02 |
 | CARRY8                     |  788 |     0 |          0 |    216000 |  0.36 |
 | F7 Muxes                   |    0 |     0 |          0 |    864000 |  0.00 |
@@ -66,9 +66,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 1720  |          Yes |           - |        Reset |
+| 2855  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 6975  |          Yes |       Reset |            - |
+| 5110  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -100,11 +100,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 4. I/O
 ------
 
-+------------+------+-------+------------+-----------+--------+
-|  Site Type | Used | Fixed | Prohibited | Available |  Util% |
-+------------+------+-------+------------+-----------+--------+
-| Bonded IOB | 1446 |     0 |          0 |       676 | 213.91 |
-+------------+------+-------+------------+-----------+--------+
++------------+------+-------+------------+-----------+-------+
+|  Site Type | Used | Fixed | Prohibited | Available | Util% |
++------------+------+-------+------------+-----------+-------+
+| Bonded IOB |    0 |     0 |          0 |       676 |  0.00 |
++------------+------+-------+------------+-----------+-------+
 
 
 5. CLOCK
@@ -113,8 +113,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------------------+------+-------+------------+-----------+-------+
 |       Site Type      | Used | Fixed | Prohibited | Available | Util% |
 +----------------------+------+-------+------------+-----------+-------+
-| GLOBAL CLOCK BUFFERs |    2 |     0 |          0 |      1344 |  0.15 |
-|   BUFGCE             |    2 |     0 |          0 |       384 |  0.52 |
+| GLOBAL CLOCK BUFFERs |    0 |     0 |          0 |      1344 |  0.00 |
+|   BUFGCE             |    0 |     0 |          0 |       384 |  0.00 |
 |   BUFGCE_DIV         |    0 |     0 |          0 |        64 |  0.00 |
 |   BUFG_GT            |    0 |     0 |          0 |       768 |  0.00 |
 |   BUFGCTRL*          |    0 |     0 |          0 |       128 |  0.00 |
@@ -163,23 +163,18 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 6975 |            Register |
-| LUT2     | 3685 |                 CLB |
+| FDRE     | 5110 |            Register |
+| LUT2     | 3831 |                 CLB |
 | LUT3     | 3092 |                 CLB |
-| LUT4     | 1808 |                 CLB |
-| FDCE     | 1141 |            Register |
-| LUT6     | 1090 |                 CLB |
-| INBUF    | 1061 |                 I/O |
-| IBUFCTRL | 1061 |              Others |
+| FDCE     | 2276 |            Register |
+| LUT4     | 1824 |                 CLB |
+| LUT6     | 1074 |                 CLB |
 | CARRY8   |  788 |                 CLB |
 | LDCE     |  579 |            Register |
+| SRL16E   |  538 |                 CLB |
 | LUT5     |  433 |                 CLB |
-| OBUF     |  385 |                 I/O |
-| SRL16E   |  200 |                 CLB |
-| SRLC32E  |  192 |                 CLB |
 | DSP48E2  |   68 |          Arithmetic |
 | LUT1     |   33 |                 CLB |
-| BUFGCE   |    2 |               Clock |
 +----------+------+---------------------+
 
 

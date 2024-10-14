@@ -79,7 +79,7 @@ module NTT
             IDLE: begin                
                 if (start) begin
                     ld = 1;
-                    counter_input = 5'd21;
+                    counter_input = 5'd16;
                     A0_reg = COEF[3:0];        // First 4 coefficients
                     A1_reg = COEF[7:4];        // Next 4 coefficients
                     psi_reg = psi_stage1;      // psi values for stage 1
@@ -91,7 +91,7 @@ module NTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd21;
+                    counter_input = 5'd16;
                     A0_reg = {stage_out[5:4], stage_out[1:0]};      // First 4 coefficients
                     A1_reg = {stage_out[7:6], stage_out[3:2]};      // Next 4 coefficients
                     psi_reg = psi_stage2;                           // psi values for stage 2
@@ -103,7 +103,7 @@ module NTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd21;
+                    counter_input = 5'd16;
                     A0_reg = {stage_out[6], stage_out[2], stage_out[4], stage_out[0]};      // First 4 coefficients
                     A1_reg = {stage_out[7], stage_out[3], stage_out[5], stage_out[1]};      // Next 4 coefficients
                     psi_reg = psi_stage3;                                                   // psi values for stage 3
@@ -115,7 +115,7 @@ module NTT
                 ld = 0;
                 if (counter_done) begin
                     ld = 1;
-                    counter_input = 5'd21;
+                    counter_input = 5'd16;
                     next_state = DONE;
                 end else
                     next_state = STAGE3;

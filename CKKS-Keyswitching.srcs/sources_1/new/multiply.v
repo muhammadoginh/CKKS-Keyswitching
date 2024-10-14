@@ -26,11 +26,18 @@ module multiply
                 B_WIDTH = 17,
                 OUT_WIDTH = 43)
     (
-        input      [A_WIDTH-1:0]   A,
-        input      [B_WIDTH-1:0]   B,
-        output     [OUT_WIDTH-1:0] P
+        input                       clk,
+        input                       rstn,
+        input      [A_WIDTH-1:0]    A,
+        input      [B_WIDTH-1:0]    B,
+        output reg [OUT_WIDTH-1:0]  P
     );
     
-    assign P = A * B;
+    always @(posedge clk) begin
+        if (!rstn)
+            P <= 0;
+        else
+            P <= A * B;
+    end
 
 endmodule

@@ -70,14 +70,14 @@ module UBU_tb();
 
 
         // Test 1: NTT Mode (Cooley-Tukey Butterfly)
-//        mode = 0;
-//        q = `q;  // A prime modulus
-//        mu = 49'd281474977103871;
-//        A0 = $random % q;  // random
-//        A1 = $random % q;  // random
-//        y = 48'd308591034;  // Some value for psi
-//        #4;
-//        $display("NTT Mode: B0 = %h, B1 = %h", B0, B1);
+        mode = 0;
+        q = `q;  // A prime modulus
+        mu = 49'd281474977103871;
+        A0 = $random % q;  // random
+        A1 = $random % q;  // random
+        y = 48'd308591034;  // Some value for psi
+        #68;
+        $display("NTT Mode: B0 = %h, B1 = %h", B0, B1);
 
         // Test 2: INTT Mode (Gentleman-Sande Butterfly)
         mode = 1;
